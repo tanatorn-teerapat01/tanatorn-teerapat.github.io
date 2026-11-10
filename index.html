@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background: #f5f7fc;
+    color: #26344b;
+}
+
+header {
+    background: rgba(255,255,255,0.95);
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px #0000000c;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+    color: #4169a8;
+}
+
+nav a {
+    text-decoration: none;
+    color: #34445d;
+    margin-left: 22px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #7199d4;
+}
+
+section {
+    padding: 85px 10%;
+}
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    background: linear-gradient(135deg,#e8efff,#f9faff);
+}
+
+.hero img {
+    width: 270px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 140px 140px 30px 30px;
+    border: 8px solid white;
+    box-shadow: 0 10px 35px #8099c633;
+}
+
+.hero-text h1 {
+    font-size: 45px;
+    color: #365c98;
+}
+
+.hero-text h2 {
+    font-size: 23px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.hero-text p {
+    color: #65738b;
+    line-height: 1.9;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: #557dbb;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #345b99;
+    transform: translateY(-3px);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.title h2 {
+    font-size: 32px;
+    color: #4169a8;
+}
+
+.title p {
+    color: #8995a8;
+    font-size: 14px;
+}
+
+.about {
+    background: white;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px #0000000a;
+    margin-bottom: 20px;
+}
+
+.about-list p {
+    padding: 10px;
+    border-bottom: 1px solid #edf0f5;
+    line-height: 1.8;
+}
+
+.education {
+    background: #f5f7fc;
+}
+
+.edu-card {
+    border-left: 5px solid #6f91c5;
+    margin: 20px auto;
+    max-width: 750px;
+}
+
+.edu-card h3 {
+    color: #4169a8;
+    margin-bottom: 10px;
+}
+
+.activities {
+    background: white;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.activity-card {
+    background: #f5f8ff;
+    padding: 18px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px #526b9220;
+}
+
+.activity-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.activity-card h3 {
+    color: #4169a8;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.activity-card p {
+    font-size: 14px;
+    color: #68768c;
+    line-height: 1.8;
+}
+
+.skills {
+    background: #f5f7fc;
+}
+
+.skill-box {
+    max-width: 750px;
+    margin: auto;
+}
+
+.skill {
+    margin-bottom: 25px;
+}
+
+.skill p {
+    margin-bottom: 8px;
+}
+
+.bar {
+    height: 12px;
+    background: #dfe7f4;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg,#789bd0,#4169a8);
+    border-radius: 20px;
+}
+
+.goal {
+    background: linear-gradient(135deg,#4169a8,#8ba8d7);
+    text-align: center;
+    color: white;
+}
+
+.goal h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.goal p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 2;
+}
+
+.contact {
+    background: white;
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px;
+}
+
+footer {
+    background: #304e7b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+@media(max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 8%;
+    }
+
+    .hero img {
+        width: 220px;
+        height: 280px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MY PORTFOLIO</div>
+    <nav>
+        <a href="#home">หน้าแรก</a>
+        <a href="#about">ประวัติส่วนตัว</a>
+        <a href="#education">การศึกษา</a>
+        <a href="#activities">กิจกรรม</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#contact">ติดต่อ</a>
+    </nav>
+</header>
+
+<!-- หน้าแรก -->
+<section class="hero" id="home">
+    <img src="profile.jpg" alt="รูปโปรไฟล์">
+    <div class="hero-text">
+        <h1>PORTFOLIO</h1>
+        <h2>ชื่อ - นามสกุล ของคุณ</h2>
+        <p>
+            แฟ้มสะสมผลงานเพื่อเข้าศึกษาต่อ<br>
+            คณะมนุษยศาสตร์และสังคมศาสตร์
+        </p>
+        <a href="#about" class="btn">รู้จักฉันเพิ่มเติม</a>
+    </div>
+</section>
+
+<!-- ประวัติส่วนตัว -->
+<section class="about" id="about">
+    <div class="title">
+        <h2>ABOUT ME</h2>
+        <p>ประวัติส่วนตัว</p>
+    </div>
+
+    <div class="card about-list">
+        <p><b>ชื่อ-นามสกุล :</b> ชื่อ นามสกุล</p>
+        <p><b>ชื่อเล่น :</b> ชื่อเล่น</p>
+        <p><b>วันเกิด :</b> วัน / เดือน / ปี</p>
+        <p><b>สถานศึกษา :</b> ชื่อโรงเรียน</p>
+        <p><b>ระดับการศึกษา :</b> มัธยมศึกษาปีที่ 6</p>
+        <p><b>ความสนใจ :</b> ความสนใจของคุณ</p>
+    </div>
+</section>
+
+<!-- การศึกษา -->
+<section class="education" id="education">
+    <div class="title">
+        <h2>EDUCATION</h2>
+        <p>ประวัติการศึกษา</p>
+    </div>
+
+    <div class="card edu-card">
+        <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+        <p>โรงเรียน................................</p>
+        <p>เกรดเฉลี่ย : 3.XX</p>
+        <p>แผนการเรียน : ....................</p>
+    </div>
+
+    <div class="card edu-card">
+        <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+        <p>โรงเรียน................................</p>
+        <p>เกรดเฉลี่ย : 3.XX</p>
+    </div>
+</section>
+
+<!-- กิจกรรม -->
+<section class="activities" id="activities">
+    <div class="title">
+        <h2>ACTIVITIES</h2>
+        <p>กิจกรรมและผลงาน</p>
+    </div>
+
+    <div class="activity-grid">
+
+        <div class="activity-card">
+            <img src="activity1.jpg" alt="กิจกรรมที่ 1">
+            <h3>กิจกรรมที่ 1</h3>
+            <p>เขียนรายละเอียดเกี่ยวกับกิจกรรมและสิ่งที่ได้รับจากการเข้าร่วมกิจกรรม</p>
+        </div>
+
+        <div class="activity-card">
+            <img src="activity2.jpg" alt="กิจกรรมที่ 2">
+            <h3>กิจกรรมที่ 2</h3>
+            <p>เขียนรายละเอียดเกี่ยวกับผลงานและประสบการณ์ที่ได้รับ</p>
+        </div>
+
+        <div class="activity-card">
+            <img src="activity3.jpg" alt="กิจกรรมที่ 3">
+            <h3>กิจกรรมที่ 3</h3>
+            <p>เขียนรายละเอียดเกี่ยวกับความสามารถและทักษะที่ได้พัฒนา</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ทักษะ -->
+<section class="skills" id="skills">
+    <div class="title">
+        <h2>MY SKILLS</h2>
+        <p>ความสามารถและทักษะ</p>
+    </div>
+
+    <div class="skill-box">
+        <div class="skill">
+            <p>การคิดวิเคราะห์</p>
+            <div class="bar"><span style="width:85%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>การทำงานเป็นทีม</p>
+            <div class="bar"><span style="width:90%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>การสื่อสาร</p>
+            <div class="bar"><span style="width:80%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>ความคิดสร้างสรรค์</p>
+            <div class="bar"><span style="width:88%"></span></div>
+        </div>
+    </div>
+</section>
+
+<!-- เป้าหมาย -->
+<section class="goal">
+    <h2>MY GOAL</h2>
+    <p>
+        มุ่งมั่นที่จะพัฒนาตนเองให้มีความรู้และความสามารถ
+        พร้อมนำความรู้ไปใช้ให้เกิดประโยชน์ต่อตนเองและสังคม
+        เพื่อก้าวไปสู่ความสำเร็จในอนาคต
+    </p>
+</section>
+
+<!-- ติดต่อ -->
+<section class="contact" id="contact">
+    <div class="title">
+        <h2>CONTACT</h2>
+        <p>ช่องทางการติดต่อ</p>
+    </div>
+
+    <p>📧 Email : your@email.com</p>
+    <p>📱 Phone : 08X-XXX-XXXX</p>
+    <p>📘 Facebook : ชื่อ Facebook</p>
+</section>
+
+<footer>
+    © 2026 MY PORTFOLIO. All Rights Reserved.
+</footer>
+
+<script>
+// เอฟเฟกต์แสดงเนื้อหาเมื่อเลื่อนหน้าจอ
+const cards = document.querySelectorAll(
+    '.card, .activity-card, .skill'
+);
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'all .7s ease';
+    observer.observe(card);
+});
+</script>
+
+</body>
+</html>
