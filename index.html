@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
+<title>Portfolio | Humanities and Social Sciences</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -16,290 +16,478 @@
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Prompt', sans-serif;
-    background: #f5f7fc;
-    color: #26344b;
+:root {
+    --gold: #d6ae62;
+    --light: #f4d99c;
+    --black: #090909;
+    --card: #171717;
+    --white: #f5f2eb;
 }
 
-header {
-    background: rgba(255,255,255,0.95);
-    padding: 18px 8%;
+body {
+    font-family: 'Prompt', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.8;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 15px #0000000c;
+    padding: 15px 7%;
+    background: rgba(9,9,9,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #d6ae6240;
 }
 
 .logo {
+    color: var(--gold);
+    font-family: Kanit;
     font-size: 23px;
-    font-weight: 700;
-    color: #4169a8;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 22px;
 }
 
 nav a {
     text-decoration: none;
-    color: #34445d;
-    margin-left: 22px;
-    font-size: 14px;
+    color: white;
+    font-size: 13px;
     transition: .3s;
 }
 
 nav a:hover {
-    color: #7199d4;
+    color: var(--gold);
 }
 
-section {
-    padding: 85px 10%;
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    color: var(--gold);
+    cursor: pointer;
 }
 
 .hero {
-    min-height: 620px;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 65px;
-    background: linear-gradient(135deg,#e8efff,#f9faff);
+    text-align: center;
+    padding: 130px 20px 70px;
+    background: radial-gradient(ellipse at center, #352817, #11100d 50%, #090909);
 }
 
-.hero img {
-    width: 270px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 140px 140px 30px 30px;
-    border: 8px solid white;
-    box-shadow: 0 10px 35px #8099c633;
+.hero .subtitle {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 13px;
 }
 
-.hero-text h1 {
-    font-size: 45px;
-    color: #365c98;
+.hero h1 {
+    font-family: Kanit;
+    font-size: clamp(45px, 8vw, 85px);
+    color: var(--light);
+    line-height: 1.3;
+    margin: 15px 0;
 }
 
-.hero-text h2 {
+.hero h2 {
     font-size: 23px;
     font-weight: 400;
+}
+
+.hero p {
+    color: #bbb;
     margin: 10px 0;
 }
 
-.hero-text p {
-    color: #65738b;
-    line-height: 1.9;
+.names {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.name-card {
+    border: 1px solid var(--gold);
+    background: #17130d;
+    border-radius: 12px;
+    padding: 15px 25px;
+    min-width: 220px;
+}
+
+.name-card h3 {
+    color: var(--gold-light, #f4d99c);
+    font-size: 17px;
+}
+
+.name-card span {
+    color: #aaa;
+    font-size: 13px;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 25px;
-    background: #557dbb;
-    color: white;
-    text-decoration: none;
-    padding: 12px 28px;
+    background: var(--gold);
+    color: #111;
+    padding: 12px 30px;
     border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
     transition: .3s;
 }
 
 .btn:hover {
-    background: #345b99;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    background: var(--light);
+    box-shadow: 0 5px 25px #d6ae6260;
 }
 
-.title {
+section {
+    padding: 90px 10%;
+}
+
+.section-title {
     text-align: center;
     margin-bottom: 45px;
 }
 
-.title h2 {
-    font-size: 32px;
-    color: #4169a8;
+.section-title h2 {
+    font-family: Kanit;
+    color: var(--gold);
+    font-size: 35px;
 }
 
-.title p {
-    color: #8995a8;
-    font-size: 14px;
+.section-title p {
+    color: #999;
+    letter-spacing: 2px;
 }
 
-.about {
-    background: white;
+.line {
+    width: 65px;
+    height: 3px;
+    background: var(--gold);
+    margin: 12px auto;
 }
 
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 5px 25px #0000000a;
-    margin-bottom: 20px;
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
 }
 
-.about-list p {
-    padding: 10px;
-    border-bottom: 1px solid #edf0f5;
-    line-height: 1.8;
+.about-img {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid var(--gold);
 }
 
-.education {
-    background: #f5f7fc;
+.about-text h3 {
+    font-family: Kanit;
+    font-size: 27px;
+    color: var(--gold);
+    margin-bottom: 15px;
 }
 
-.edu-card {
-    border-left: 5px solid #6f91c5;
-    margin: 20px auto;
+.info {
+    background: var(--card);
+    padding: 12px 18px;
+    margin: 10px 0;
+    border-left: 3px solid var(--gold);
+    border-radius: 5px;
+}
+
+.info span {
+    color: var(--gold);
+}
+
+.student-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.student {
+    background: #211b11;
+    border: 1px solid #66502c;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.student h4 {
+    color: var(--gold);
+}
+
+#education {
+    background: #101010;
+}
+
+.education-box {
     max-width: 750px;
+    margin: auto;
+    border-left: 2px solid var(--gold);
+    padding-left: 30px;
 }
 
-.edu-card h3 {
-    color: #4169a8;
-    margin-bottom: 10px;
+.edu-item {
+    position: relative;
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #302719;
 }
 
-.activities {
-    background: white;
+.edu-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 30px;
+    width: 14px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.edu-item h3 {
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.gpa {
+    display: inline-block;
+    background: #3b2d16;
+    color: var(--gold);
+    padding: 4px 15px;
+    border-radius: 20px;
+    margin-top: 8px;
 }
 
 .activity-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .activity-card {
-    background: #f5f8ff;
-    padding: 18px;
-    border-radius: 15px;
-    transition: .3s;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #302719;
+    transition: .4s;
 }
 
 .activity-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 8px 20px #526b9220;
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px #d6ae6220;
 }
 
 .activity-card img {
     width: 100%;
-    height: 190px;
+    height: 240px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
 
-.activity-card h3 {
-    color: #4169a8;
+.activity-content {
+    padding: 22px;
+}
+
+.activity-content h3 {
+    color: var(--gold);
+    font-size: 19px;
     margin-bottom: 10px;
-    font-size: 18px;
 }
 
-.activity-card p {
+.activity-content p {
+    color: #bbb;
     font-size: 14px;
-    color: #68768c;
-    line-height: 1.8;
 }
 
-.skills {
-    background: #f5f7fc;
+#skills {
+    background: #101010;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .skill-box {
-    max-width: 750px;
-    margin: auto;
+    background: var(--card);
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #302719;
+    transition: .3s;
 }
 
-.skill {
-    margin-bottom: 25px;
+.skill-box:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
 }
 
-.skill p {
-    margin-bottom: 8px;
+.symbol {
+    color: var(--gold);
+    font-size: 40px;
 }
 
-.bar {
-    height: 12px;
-    background: #dfe7f4;
-    border-radius: 20px;
-    overflow: hidden;
+.skill-box h3 {
+    color: var(--gold);
+    margin: 10px 0;
 }
 
-.bar span {
-    display: block;
-    height: 100%;
-    background: linear-gradient(90deg,#789bd0,#4169a8);
-    border-radius: 20px;
+.hobby {
+    text-align: center;
+}
+
+.hobby-box {
+    display: inline-block;
+    background: var(--card);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px 35px;
+    margin: 10px;
+    color: var(--gold);
+    font-size: 18px;
+}
+
+.motto {
+    background: linear-gradient(120deg, #2c2112, #111);
+    text-align: center;
+    border-top: 1px solid #66502c;
+    border-bottom: 1px solid #66502c;
+}
+
+.motto h3 {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+.motto p {
+    font-size: 27px;
+    color: var(--light);
+    margin-top: 15px;
 }
 
 .goal {
-    background: linear-gradient(135deg,#4169a8,#8ba8d7);
     text-align: center;
-    color: white;
 }
 
-.goal h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.goal p {
-    max-width: 700px;
+.goal-text {
+    max-width: 800px;
     margin: auto;
-    line-height: 2;
+    background: var(--card);
+    border: 1px solid #66502c;
+    border-radius: 15px;
+    padding: 35px;
+    font-size: 18px;
+    color: #ddd;
 }
 
 .contact {
-    background: white;
     text-align: center;
+    background: #101010;
 }
 
 .contact p {
     margin: 12px;
+    color: #ccc;
+}
+
+.contact span {
+    color: var(--gold);
 }
 
 footer {
-    background: #304e7b;
-    color: white;
     text-align: center;
     padding: 25px;
+    background: #050505;
+    color: #888;
     font-size: 13px;
+    border-top: 1px solid #332817;
 }
 
-@media(max-width: 800px) {
-    header {
-        flex-direction: column;
-        gap: 12px;
-    }
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all .8s ease;
+}
 
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    nav a {
-        margin: 0;
-        font-size: 12px;
-    }
-
-    .hero {
+@media(max-width: 850px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #111;
         flex-direction: column;
         text-align: center;
-        padding: 65px 8%;
+        padding: 25px;
     }
 
-    .hero img {
-        width: 220px;
-        height: 280px;
+    nav ul.active {
+        display: flex;
     }
 
-    .hero-text h1 {
-        font-size: 32px;
+    .menu-btn {
+        display: block;
     }
 
-    .activity-grid {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-img {
+        margin: auto;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+    section {
+        padding: 70px 6%;
+    }
+
+    .activity-grid,
+    .student-list {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 65px 7%;
+    .hero h2 {
+        font-size: 17px;
+    }
+
+    .motto p {
+        font-size: 21px;
     }
 }
 </style>
@@ -307,176 +495,338 @@ footer {
 
 <body>
 
-<header>
+<!-- MENU -->
+<nav>
     <div class="logo">MY PORTFOLIO</div>
-    <nav>
-        <a href="#home">หน้าแรก</a>
-        <a href="#about">ประวัติส่วนตัว</a>
-        <a href="#education">การศึกษา</a>
-        <a href="#activities">กิจกรรม</a>
-        <a href="#skills">ทักษะ</a>
-        <a href="#contact">ติดต่อ</a>
-    </nav>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
+        <li><a href="#home" onclick="closeMenu()">HOME</a></li>
+        <li><a href="#about" onclick="closeMenu()">ABOUT</a></li>
+        <li><a href="#education" onclick="closeMenu()">EDUCATION</a></li>
+        <li><a href="#activities" onclick="closeMenu()">ACTIVITIES</a></li>
+        <li><a href="#skills" onclick="closeMenu()">SKILLS</a></li>
+        <li><a href="#goal" onclick="closeMenu()">MY GOAL</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<header class="hero" id="home">
+
+    <div class="subtitle">WELCOME TO OUR PORTFOLIO</div>
+
+    <h1>PORTFOLIO</h1>
+
+    <h2>แฟ้มสะสมผลงานเพื่อเข้าศึกษาต่อ</h2>
+
+    <p>คณะมนุษยศาสตร์และสังคมศาสตร์</p>
+
+    <div class="names">
+        <div class="name-card">
+            <h3>TEERAPAT AUPALA</h3>
+            <span>STUDENT NO. 6</span>
+        </div>
+
+        <div class="name-card">
+            <h3>TANATORN BUNKHWAN</h3>
+            <span>STUDENT NO. 22</span>
+        </div>
+    </div>
+
+    <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+
+    <a href="#about" class="btn">EXPLORE PORTFOLIO ↓</a>
+
 </header>
 
-<!-- หน้าแรก -->
-<section class="hero" id="home">
-    <img src="profile.jpg" alt="รูปโปรไฟล์">
-    <div class="hero-text">
-        <h1>PORTFOLIO</h1>
-        <h2>ชื่อ - นามสกุล ของคุณ</h2>
-        <p>
-            แฟ้มสะสมผลงานเพื่อเข้าศึกษาต่อ<br>
-            คณะมนุษยศาสตร์และสังคมศาสตร์
-        </p>
-        <a href="#about" class="btn">รู้จักฉันเพิ่มเติม</a>
-    </div>
-</section>
+<!-- ABOUT -->
+<section id="about">
 
-<!-- ประวัติส่วนตัว -->
-<section class="about" id="about">
-    <div class="title">
+    <div class="section-title reveal">
         <h2>ABOUT ME</h2>
         <p>ประวัติส่วนตัว</p>
+        <div class="line"></div>
     </div>
 
-    <div class="card about-list">
-        <p><b>ชื่อ-นามสกุล :</b> ชื่อ นามสกุล</p>
-        <p><b>ชื่อเล่น :</b> ชื่อเล่น</p>
-        <p><b>วันเกิด :</b> วัน / เดือน / ปี</p>
-        <p><b>สถานศึกษา :</b> ชื่อโรงเรียน</p>
-        <p><b>ระดับการศึกษา :</b> มัธยมศึกษาปีที่ 6</p>
-        <p><b>ความสนใจ :</b> ความสนใจของคุณ</p>
+    <div class="about-container reveal">
+
+        <img class="about-img"
+        src="images/profile.jpg"
+        alt="รูปนักเรียน">
+
+        <div class="about-text">
+
+            <h3>PERSONAL INFORMATION</h3>
+
+            <p>ข้อมูลประวัติส่วนตัวของผู้จัดทำแฟ้มสะสมผลงาน</p>
+
+            <div class="student-list">
+
+                <div class="student">
+                    <h4>TEERAPAT AUPALA</h4>
+                    <p>เลขที่ 6</p>
+                </div>
+
+                <div class="student">
+                    <h4>TANATORN BUNKHWAN</h4>
+                    <p>เลขที่ 22</p>
+                </div>
+
+            </div>
+
+            <div class="info">
+                <span>สถานศึกษา :</span>
+                โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก
+            </div>
+
+            <div class="info">
+                <span>ระดับการศึกษา :</span>
+                มัธยมศึกษาปีที่ 6
+            </div>
+
+            <div class="info">
+                <span>ความสนใจ :</span>
+                การเมืองและการปกครอง
+            </div>
+
+        </div>
     </div>
 </section>
 
-<!-- การศึกษา -->
-<section class="education" id="education">
-    <div class="title">
+<!-- EDUCATION -->
+<section id="education">
+
+    <div class="section-title reveal">
         <h2>EDUCATION</h2>
         <p>ประวัติการศึกษา</p>
+        <div class="line"></div>
     </div>
 
-    <div class="card edu-card">
-        <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
-        <p>โรงเรียน................................</p>
-        <p>เกรดเฉลี่ย : 3.XX</p>
-        <p>แผนการเรียน : ....................</p>
-    </div>
+    <div class="education-box reveal">
 
-    <div class="card edu-card">
-        <h3>ระดับมัธยมศึกษาตอนต้น</h3>
-        <p>โรงเรียน................................</p>
-        <p>เกรดเฉลี่ย : 3.XX</p>
+        <div class="edu-item">
+            <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+            <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+            <p>แผนการเรียน : ศิลป์-คำนวณ</p>
+            <div class="gpa">เกรดเฉลี่ย 3.78</div>
+        </div>
+
+        <div class="edu-item">
+            <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+            <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+            <p>แผนการเรียน : วิทยาศาสตร์-คณิตศาสตร์</p>
+            <div class="gpa">เกรดเฉลี่ย 3.70</div>
+        </div>
+
     </div>
 </section>
 
-<!-- กิจกรรม -->
-<section class="activities" id="activities">
-    <div class="title">
-        <h2>ACTIVITIES</h2>
+<!-- ACTIVITIES -->
+<section id="activities">
+
+    <div class="section-title reveal">
+        <h2>ACTIVITIES & AWARDS</h2>
         <p>กิจกรรมและผลงาน</p>
+        <div class="line"></div>
     </div>
 
     <div class="activity-grid">
 
-        <div class="activity-card">
-            <img src="activity1.jpg" alt="กิจกรรมที่ 1">
-            <h3>กิจกรรมที่ 1</h3>
-            <p>เขียนรายละเอียดเกี่ยวกับกิจกรรมและสิ่งที่ได้รับจากการเข้าร่วมกิจกรรม</p>
+        <div class="activity-card reveal">
+            <img src="images/activity1.jpg" alt="จิตอาสาพัฒนาวัด">
+            <div class="activity-content">
+                <h3>จิตอาสาพัฒนาวัดและบริการโรงทาน</h3>
+                <p>
+                    เข้าร่วมกิจกรรมจิตอาสาพัฒนาวัดและให้บริการโรงทาน
+                    โดยร่วมจัดเตรียมอาหารและเครื่องดื่ม
+                    ช่วยจัดสถานที่ ดูแลความสะอาด เก็บขยะ
+                    และบำรุงรักษาบริเวณวัด
+                    ทำให้ได้เรียนรู้การเสียสละและการช่วยเหลือสังคม
+                </p>
+            </div>
         </div>
 
-        <div class="activity-card">
-            <img src="activity2.jpg" alt="กิจกรรมที่ 2">
-            <h3>กิจกรรมที่ 2</h3>
-            <p>เขียนรายละเอียดเกี่ยวกับผลงานและประสบการณ์ที่ได้รับ</p>
+        <div class="activity-card reveal">
+            <img src="images/activity2.jpg" alt="ประธานสี">
+            <div class="activity-content">
+                <h3>ประธานสีแดง ปักษาวายุภักดิ์</h3>
+                <p>
+                    ได้รับคัดเลือกให้เป็นประธานสีแดง
+                    ปักษาวายุภักดิ์ ในการแข่งขันกีฬาสีภายในโรงเรียน
+                    หว้าหินเกมส์ ได้ฝึกฝนภาวะผู้นำ
+                    การวางแผน และการทำงานร่วมกับผู้อื่น
+                </p>
+            </div>
         </div>
 
-        <div class="activity-card">
-            <img src="activity3.jpg" alt="กิจกรรมที่ 3">
-            <h3>กิจกรรมที่ 3</h3>
-            <p>เขียนรายละเอียดเกี่ยวกับความสามารถและทักษะที่ได้พัฒนา</p>
+        <div class="activity-card reveal">
+            <img src="images/activity3.jpg" alt="การแข่งขันวิ่ง">
+            <div class="activity-content">
+                <h3>การแข่งขันวิ่งผลัด 4 × 400 เมตร</h3>
+                <p>
+                    เข้าร่วมการแข่งขันกีฬาวิ่งผลัด 4 × 400 เมตร
+                    และได้รับรางวัลเหรียญทองแดง
+                    แสดงถึงความมุ่งมั่น ความอดทน
+                    และความสามัคคีในการทำงานเป็นทีม
+                </p>
+            </div>
+        </div>
+
+        <div class="activity-card reveal">
+            <img src="images/activity4.jpg" alt="กิจกรรมวันอาเซียน">
+            <div class="activity-content">
+                <h3>กิจกรรมบูธวันอาเซียน</h3>
+                <p>
+                    เป็นตัวแทนนักเรียนชั้นมัธยมศึกษาปีที่ 6/2
+                    ในการจัดกิจกรรมบูธวันอาเซียน
+                    ได้เรียนรู้เกี่ยวกับประเทศสมาชิกอาเซียน
+                    วัฒนธรรมและภาษาต่าง ๆ
+                    รวมถึงการทำงานร่วมกัน
+                </p>
+            </div>
         </div>
 
     </div>
 </section>
 
-<!-- ทักษะ -->
-<section class="skills" id="skills">
-    <div class="title">
+<!-- SKILLS -->
+<section id="skills">
+
+    <div class="section-title reveal">
         <h2>MY SKILLS</h2>
         <p>ความสามารถและทักษะ</p>
+        <div class="line"></div>
     </div>
 
-    <div class="skill-box">
-        <div class="skill">
-            <p>การคิดวิเคราะห์</p>
-            <div class="bar"><span style="width:85%"></span></div>
+    <div class="skills-container">
+
+        <div class="skill-box reveal">
+            <div class="symbol">✦</div>
+            <h3>ความอดทน</h3>
+            <p>มีความอดทนและมุ่งมั่นในการทำงานให้สำเร็จ</p>
         </div>
 
-        <div class="skill">
-            <p>การทำงานเป็นทีม</p>
-            <div class="bar"><span style="width:90%"></span></div>
+        <div class="skill-box reveal">
+            <div class="symbol">✧</div>
+            <h3>การทำงานเป็นทีม</h3>
+            <p>สามารถทำงานร่วมกับผู้อื่นและรับฟังความคิดเห็น</p>
         </div>
 
-        <div class="skill">
-            <p>การสื่อสาร</p>
-            <div class="bar"><span style="width:80%"></span></div>
+        <div class="skill-box reveal">
+            <div class="symbol">★</div>
+            <h3>ภาวะผู้นำ</h3>
+            <p>มีความกล้าตัดสินใจและสามารถวางแผนงานได้</p>
         </div>
 
-        <div class="skill">
-            <p>ความคิดสร้างสรรค์</p>
-            <div class="bar"><span style="width:88%"></span></div>
+        <div class="skill-box reveal">
+            <div class="symbol">◆</div>
+            <h3>ความรับผิดชอบ</h3>
+            <p>มีความรับผิดชอบต่อตนเองและผู้อื่น</p>
         </div>
+
     </div>
 </section>
 
-<!-- เป้าหมาย -->
-<section class="goal">
-    <h2>MY GOAL</h2>
-    <p>
-        มุ่งมั่นที่จะพัฒนาตนเองให้มีความรู้และความสามารถ
-        พร้อมนำความรู้ไปใช้ให้เกิดประโยชน์ต่อตนเองและสังคม
-        เพื่อก้าวไปสู่ความสำเร็จในอนาคต
-    </p>
-</section>
+<!-- HOBBY -->
+<section class="hobby">
 
-<!-- ติดต่อ -->
-<section class="contact" id="contact">
-    <div class="title">
-        <h2>CONTACT</h2>
-        <p>ช่องทางการติดต่อ</p>
+    <div class="section-title reveal">
+        <h2>MY HOBBIES</h2>
+        <p>งานอดิเรก</p>
+        <div class="line"></div>
     </div>
 
-    <p>📧 Email : your@email.com</p>
-    <p>📱 Phone : 08X-XXX-XXXX</p>
-    <p>📘 Facebook : ชื่อ Facebook</p>
+    <div class="reveal">
+        <div class="hobby-box">📰 ดูข่าวสาร</div>
+        <div class="hobby-box">🎵 ฟังเพลง</div>
+    </div>
+
+</section>
+
+<!-- MOTTO -->
+<section class="motto reveal">
+
+    <div class="section-title">
+        <h2>MY MOTTO</h2>
+        <p>คติประจำใจ</p>
+        <div class="line"></div>
+    </div>
+
+    <p>"เป้าหมายใหญ่ ต้องใจแข็ง"</p>
+
+</section>
+
+<!-- GOAL -->
+<section class="goal" id="goal">
+
+    <div class="section-title reveal">
+        <h2>MY GOAL</h2>
+        <p>เป้าหมายในอนาคต</p>
+        <div class="line"></div>
+    </div>
+
+    <div class="goal-text reveal">
+
+        <p>
+            มีความมุ่งมั่นที่จะศึกษาต่อในระดับมหาวิทยาลัย
+            คณะมนุษยศาสตร์และสังคมศาสตร์
+            เพื่อพัฒนาความรู้ความสามารถด้านสังคมศาสตร์
+            การเมือง และการปกครอง
+        </p>
+
+        <br>
+
+        <p>
+            เป้าหมายในอนาคตคือการเข้ารับราชการ
+            และก้าวสู่การเป็นผู้บริหารที่มีคุณภาพ
+            ยึดมั่นในความถูกต้อง มีความซื่อสัตย์สุจริต
+            รับผิดชอบต่อหน้าที่ และปฏิบัติงานเพื่อประโยชน์ของส่วนรวม
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+
+    <div class="section-title reveal">
+        <h2>THANK YOU</h2>
+        <p>ขอบคุณที่เข้าชมแฟ้มสะสมผลงานของเรา</p>
+        <div class="line"></div>
+    </div>
+
+    <p><span>TEERAPAT AUPALA</span> | NO. 6</p>
+    <p><span>TANATORN BUNKHWAN</span> | NO. 22</p>
+    <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+
 </section>
 
 <footer>
-    © 2026 MY PORTFOLIO. All Rights Reserved.
+    © 2026 PORTFOLIO | HUMANITIES AND SOCIAL SCIENCES
 </footer>
 
 <script>
-// เอฟเฟกต์แสดงเนื้อหาเมื่อเลื่อนหน้าจอ
-const cards = document.querySelectorAll(
-    '.card, .activity-card, .skill'
-);
+function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+}
 
-const observer = new IntersectionObserver(entries => {
+function closeMenu() {
+    document.getElementById('menu').classList.remove('active');
+}
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
         }
     });
-}, { threshold: 0.1 });
+}, {
+    threshold: 0.12
+});
 
-cards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all .7s ease';
-    observer.observe(card);
+document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
 });
 </script>
 
